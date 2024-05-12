@@ -255,7 +255,7 @@ async def test_update_user_id_validation_error(client, create_user_in_database):
 async def test_update_user_not_found_error(client, create_user_in_database):
     user_data = {
         "user_id": uuid4(),
-        ""name": "Ali",
+        "name": "Ali",
         "surname": "BackDev",
         "email": "admin@admin.com",
         "is_active": True,
