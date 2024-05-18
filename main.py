@@ -10,13 +10,16 @@ from api.handlers import user_router
 from api.login_handler import login_router
 from api.service import service_router
 
-# sentry configuration
+
 sentry_sdk.init(
-    dsn=settings.SENTRY_URL,
+    dsn="https://9b031e74450e0125f25d3b2ea0d59a9d@o4507276533039104.ingest.us.sentry.io/4507276534939648",
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
-    # We recommend adjusting this value in production,
     traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    # We recommend adjusting this value in production.
+    profiles_sample_rate=1.0,
 )
 
 #########################

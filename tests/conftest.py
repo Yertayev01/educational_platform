@@ -1,8 +1,7 @@
 import asyncio
 import os
 from datetime import timedelta
-from typing import Any
-from typing import Generator
+from typing import AsyncGenerator
 
 import asyncpg
 import pytest
@@ -69,7 +68,7 @@ async def _get_test_db():
 
 
 @pytest.fixture(scope="function")
-async def client() -> Generator[TestClient, Any, None]:
+async def your_async_generator_function() -> AsyncGenerator[TestClient, None]:
     """
     Create a new FastAPI TestClient that uses the `db_session` fixture to override
     the `get_db` dependency that is injected into routes.
