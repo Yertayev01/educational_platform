@@ -1,12 +1,11 @@
 import os
 from logging.config import fileConfig
 
-from alembic import context
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
+from alembic import context
 from db.models import Base
-from settings import REAL_DATABASE_URL
 
 
 # this is the Alembic Config object, which provides
@@ -31,7 +30,7 @@ target_metadata = Base.metadata
 
 # todo luchanos should be explained
 # we don't want to get database url from alembic.ini - now we take it from env variables
-url = os.environ.get(REAL_DATABASE_URL, config.get_main_option("sqlalchemy.url"))
+url = os.environ.get("ALEMBIC_DATABASE_URL", config.get_main_option("sqlalchemy.url"))
 
 
 # FOR LOCAL MIGRATIONS ONLY

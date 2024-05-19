@@ -12,7 +12,7 @@ from api.service import service_router
 
 
 sentry_sdk.init(
-    dsn="https://9b031e74450e0125f25d3b2ea0d59a9d@o4507276533039104.ingest.us.sentry.io/4507276534939648",
+    dsn=settings.SENTRY_URL,
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     traces_sample_rate=1.0,

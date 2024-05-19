@@ -17,8 +17,8 @@ services:
     image: postgres:14.1-alpine
     restart: always
     environment:
-      - POSTGRES_USER=postgres_test
-      - POSTGRES_PASSWORD=postgres_test
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres_test
     ports:
       - "5433:5432"
@@ -29,9 +29,9 @@ services:
     container_name: prometheus
     restart: unless-stopped
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yaml
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--config.file=/etc/prometheus/prometheus.yaml'
     ports:
       - "9090:9090"
     networks:
